@@ -12,6 +12,7 @@ export function Papers({ papers }: PapersProps) {
 
   return (
     <section
+      id={papers.id}
       className={`${styles.section} reveal`}
       ref={ref}
       aria-labelledby="papers-heading"

@@ -84,6 +84,7 @@ export interface ConferenceContent {
     paragraphs: string[];
   };
   highlights: {
+    id: string;
     heading: string;
     items: HighlightItem[];
   };
@@ -100,6 +101,7 @@ export interface ConferenceContent {
     days: ProgramDay[];
   };
   papers: {
+    id: string;
     heading: string;
     subheading?: string;
     categories: PaperCategory[];
@@ -112,6 +114,7 @@ export interface ConferenceContent {
     sections: TopicSection[];
   };
   publication: {
+    id: string;
     heading: string;
     subheading?: string;
     journalName: string;
@@ -125,6 +128,7 @@ export interface ConferenceContent {
     items: ImportantDate[];
   };
   guidelines: {
+    id: string;
     heading: string;
     subheading?: string;
     items: GuidelineItem[];
@@ -136,7 +140,11 @@ export interface ConferenceContent {
     emailLabel: string;
     email: string;
   };
-  acknowledgment: string;
+  acknowledgment: {
+    id: string;
+    heading: string;
+    text: string;
+  };
   footer: {
     brand: string;
   };

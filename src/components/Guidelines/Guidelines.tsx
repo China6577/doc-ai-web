@@ -12,6 +12,7 @@ export function Guidelines({ guidelines }: GuidelinesProps) {
 
   return (
     <section
+      id={guidelines.id}
       className={`${styles.section} reveal`}
       ref={ref}
       aria-labelledby="guidelines-heading"

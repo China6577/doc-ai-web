@@ -2,7 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  height: var(--header-height);
+  height: auto;
+  min-height: var(--header-height);
   background: rgba(255, 255, 255, 0.72);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
@@ -16,13 +17,12 @@
 
 .inner {
   max-width: var(--content-max);
-  height: 100%;
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 10px var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
 }
 
 .brand {
@@ -40,14 +40,16 @@
 
 .nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  gap: 2px;
 }
 
 .navLink {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--color-text-secondary);
-  padding: 6px 12px;
+  padding: 5px 8px;
   border-radius: 8px;
   white-space: nowrap;
   transition: color 0.2s ease;

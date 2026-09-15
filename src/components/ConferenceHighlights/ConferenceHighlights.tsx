@@ -11,6 +11,7 @@ export function ConferenceHighlights({ highlights }: ConferenceHighlightsProps) 
 
   return (
     <section
+      id={highlights.id}
       className={`${styles.section} reveal`}
       ref={ref}
       aria-label={highlights.heading}

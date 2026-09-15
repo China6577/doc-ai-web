@@ -12,6 +12,7 @@ export function Publication({ publication }: PublicationProps) {
 
   return (
     <section
+      id={publication.id}
       className={`${styles.section} reveal`}
       ref={ref}
       aria-labelledby="publication-heading"

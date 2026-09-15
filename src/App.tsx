@@ -33,7 +33,7 @@ function App() {
         <Publication publication={content.publication} />
         <ImportantDates dates={content.dates} />
         <Guidelines guidelines={content.guidelines} />
-        <Acknowledgment text={content.acknowledgment} />
+        <Acknowledgment acknowledgment={content.acknowledgment} />
         <Contact contact={content.contact} />
       </main>
       <Footer footer={content.footer} />

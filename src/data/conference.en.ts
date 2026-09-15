@@ -11,10 +11,16 @@ export const conferenceEn: ConferenceContent = {
     brand: "China DocAI 2026",
     nav: [
       { id: "about", label: "About" },
+      { id: "highlights", label: "Highlights" },
       { id: "committee", label: "Committee" },
       { id: "program", label: "Program" },
+      { id: "papers", label: "Papers" },
       { id: "topics", label: "Topics" },
+      { id: "publication", label: "Publication" },
       { id: "dates", label: "Important Dates" },
+      { id: "guidelines", label: "Guidelines" },
+      { id: "acknowledgment", label: "Acknowledgment" },
+      { id: "contact", label: "Contact" },
     ],
     menuLabel: "Open menu",
     closeLabel: "Close menu",
@@ -43,6 +49,7 @@ export const conferenceEn: ConferenceContent = {
     ],
   },
   highlights: {
+    id: "highlights",
     heading: "At a Glance",
     items: [
       { label: "Date", value: "December 25–27, 2026" },
@@ -130,6 +137,7 @@ export const conferenceEn: ConferenceContent = {
     ],
   },
   papers: {
+    id: "papers",
     heading: "Papers",
     subheading: "",
     categories: [
@@ -234,6 +242,7 @@ export const conferenceEn: ConferenceContent = {
     ],
   },
   publication: {
+    id: "publication",
     heading: "Publication",
     subheading: "",
     journalName: "Journal of Image and Graphics",
@@ -253,6 +262,7 @@ export const conferenceEn: ConferenceContent = {
     ],
   },
   guidelines: {
+    id: "guidelines",
     heading: "Submission Guidelines",
     subheading: "",
     items: [
@@ -285,8 +295,11 @@ export const conferenceEn: ConferenceContent = {
     emailLabel: "Conference Email",
     email: "China_DocAI@163.com",
   },
-  acknowledgment:
-    "The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.",
+  acknowledgment: {
+    id: "acknowledgment",
+    heading: "Acknowledgment",
+    text: "The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.",
+  },
   footer: {
     brand: "China DocAI 2026",
   },
