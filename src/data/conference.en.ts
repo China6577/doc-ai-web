@@ -33,7 +33,7 @@ export const conferenceEn: ConferenceContent = {
     title: "China DocAI 2026",
     datetime: "December 25–27, 2026",
     location: "Beijing, China",
-    deadlineLabel: "Paper Submission Deadline",
+    deadlineLabel: "Submission Deadline",
     deadlineDate: "Oct 31, 2026",
     cfpLink: "View Call for Papers ↓",
   },
