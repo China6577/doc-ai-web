@@ -13,10 +13,15 @@ export interface CommitteeGroup {
   members: CommitteeMember[];
 }
 
+export interface ProgramDayItem {
+  text: string;
+  link?: string;
+}
+
 export interface ProgramDay {
   date: string;
   weekday?: string;
-  items: string[];
+  items: (string | ProgramDayItem)[];
 }
 
 export interface TopicSection {

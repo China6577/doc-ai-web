@@ -7,6 +7,12 @@ interface ProgramProps {
   program: ConferenceContent["program"];
 }
 
+function isLinkItem(
+  item: string | { text: string; link?: string },
+): item is { text: string; link?: string } {
+  return typeof item === "object" && "text" in item;
+}
+
 export function Program({ program }: ProgramProps) {
   const ref = useReveal<HTMLElement>();
 
@@ -28,9 +34,22 @@ export function Program({ program }: ProgramProps) {
               <h3 className={styles.date}>{day.date}</h3>
               <div className={styles.marker} aria-hidden="true" />
               <ul className={styles.items}>
-                {day.items.map((item) => (
-                  <li key={item} className={styles.item}>
-                    {item}
+                {day.items.map((item, index) => (
+                  <li key={index} className={styles.item}>
+                    {isLinkItem(item) && item.link ? (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.itemLink}
+                      >
+                        {item.text}
+                      </a>
+                    ) : (
+                      <span className={styles.itemText}>
+                        {isLinkItem(item) ? item.text : item}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
