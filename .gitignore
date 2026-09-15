@@ -1,0 +1,32 @@
+# 依赖与构建产物
+node_modules/
+dist/
+
+# 日志
+*.log
+
+# 调试/临时产物（历史会话遗留）
+.ab-*
+.alive.txt
+.build-tail.txt
+.deps-ok
+.dist-list.txt
+.nodecheck.txt
+.ping.txt
+.prefix.txt
+.probe*.txt
+.render-*.txt
+.setup.done
+.check-lang.js
+render-check.js
+render-check.cjs
+screenshot-en.js
+shot-*.png
+.e4-view.txt
+
+# Office 临时锁文件
+~$*
+
+# 本次迁移/git 操作的过程日志
+.workbuddy/move_*.txt
+.workbuddy/git_*.txt
