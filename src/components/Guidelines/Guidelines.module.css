@@ -70,6 +70,16 @@
   word-break: break-all;
 }
 
+.inlineLink {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.inlineLink:hover {
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .section {
     padding: 64px var(--gutter);

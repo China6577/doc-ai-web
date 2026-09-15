@@ -268,23 +268,30 @@ export const conferenceEn: ConferenceContent = {
     items: [
       {
         number: "01",
-        title: "Originality and Copyright",
+        title: "Originality",
         paragraphs: [
-          "Original papers must not have been published in any formal publication and must not be under simultaneous submission elsewhere. Authors must guarantee the legitimacy of the submitted manuscript (free of plagiarism, infringement, or other misconduct). After submission, authors are required to sign a copyright transfer agreement and a confidentiality review certificate.",
+          "The conference is open to original papers of theoretical or practical nature.",
         ],
       },
       {
         number: "02",
-        title: "Double-blind Review",
+        title: "Formatting and Page Limit",
         paragraphs: [
-          "Each manuscript will be anonymously reviewed by multiple domain experts. The conference adopts a double-blind review mechanism; manuscripts must not contain any author or affiliation information, otherwise they will be rejected.",
+          "Papers should be formatted to follow the instructions in the ICDAR webpage and according to the instructions and style files provided by [this website](http://www.cjig.cn/previewFile?id=96199771&type=pdf&lang=zhOriginality). The LaTeX template for LNCS can be downloaded here and is also available on Overleaf. Papers are limited to 20 pages (not including references).",
         ],
       },
       {
         number: "03",
+        title: "Double-Blind Review and Submission",
+        paragraphs: [
+          "This conference will follow a double-blind review process. Authors should not include their names and affiliations anywhere in the manuscript. Authors should also ensure that their identity is not revealed directly by citing their previous work in the third person and omitting acknowledgments until the camera-ready version. Papers have to be submitted via the conference's CMT submission page.",
+        ],
+      },
+      {
+        number: "04",
         title: "Registration and Attendance",
         paragraphs: [
-          "Each accepted paper must have at least one author registered and attending the conference; otherwise, the paper will not be published or promoted.",
+          "At least one author of each accepted paper must register for the conference, in order to present the paper.",
         ],
       },
     ],

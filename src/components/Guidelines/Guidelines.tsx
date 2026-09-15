@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { ConferenceContent } from "../../types/conference";
 import { useReveal } from "../../hooks/useReveal";
 import { SectionHeader } from "../SectionHeader/SectionHeader";
@@ -5,6 +6,39 @@ import styles from "./Guidelines.module.css";
 
 interface GuidelinesProps {
   guidelines: ConferenceContent["guidelines"];
+}
+
+function renderInlineLinks(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    const [full, label, url] = match;
+    if (match.index > lastIndex) {
+      parts.push(<span key={key++}>{text.slice(lastIndex, match.index)}</span>);
+    }
+    parts.push(
+      <a
+        key={key++}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.inlineLink}
+      >
+        {label}
+      </a>,
+    );
+    lastIndex = match.index + full.length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(<span key={key++}>{text.slice(lastIndex)}</span>);
+  }
+
+  return parts;
 }
 
 export function Guidelines({ guidelines }: GuidelinesProps) {
@@ -35,7 +69,7 @@ export function Guidelines({ guidelines }: GuidelinesProps) {
                 ) : null}
                 {item.paragraphs.map((paragraph, index) => (
                   <p key={index} className={styles.paragraph}>
-                    {paragraph}
+                    {renderInlineLinks(paragraph)}
                   </p>
                 ))}
                 {item.link ? (
