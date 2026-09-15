@@ -1,6 +1,6 @@
 .section {
   padding: 96px var(--gutter);
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
 }
 
 .inner {
@@ -17,7 +17,7 @@
 }
 
 .category {
-  background: var(--color-bg);
+  background: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 36px 32px;

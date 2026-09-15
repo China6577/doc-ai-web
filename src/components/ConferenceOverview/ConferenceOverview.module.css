@@ -1,5 +1,6 @@
 .section {
   padding: 32px var(--gutter) 96px;
+  background: var(--color-bg);
 }
 
 .inner {

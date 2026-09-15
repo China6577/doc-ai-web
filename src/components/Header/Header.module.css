@@ -60,6 +60,11 @@
   text-decoration: none;
 }
 
+.active {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 .actions {
   display: flex;
   align-items: center;
@@ -157,5 +162,10 @@
   .mobileNavLink:hover {
     text-decoration: none;
     color: var(--color-accent);
+  }
+
+  .mobileActive {
+    color: var(--color-accent);
+    font-weight: 600;
   }
 }

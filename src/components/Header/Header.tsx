@@ -9,6 +9,7 @@ interface HeaderProps {
 export function Header({ header }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const onScroll = () => {
@@ -17,6 +18,25 @@ export function Header({ header }: HeaderProps) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
@@ -32,7 +52,11 @@ export function Header({ header }: HeaderProps) {
 
         <nav className={styles.nav} aria-label="Primary">
           {header.nav.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className={styles.navLink}>
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`${styles.navLink} ${activeSection === item.id ? styles.active : ""}`}
+            >
               {item.label}
             </a>
           ))}
@@ -65,7 +89,7 @@ export function Header({ header }: HeaderProps) {
           <a
             key={item.id}
             href={`#${item.id}`}
-            className={styles.mobileNavLink}
+            className={`${styles.mobileNavLink} ${activeSection === item.id ? styles.mobileActive : ""}`}
             onClick={closeMenu}
           >
             {item.label}

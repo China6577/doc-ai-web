@@ -1,5 +1,6 @@
 .section {
   padding: 96px var(--gutter);
+  background: var(--color-bg-secondary);
 }
 
 .inner {
@@ -41,7 +42,7 @@
   height: 11px;
   border-radius: 50%;
   background: var(--color-accent);
-  box-shadow: 0 0 0 5px var(--color-bg);
+  box-shadow: 0 0 0 5px var(--color-bg-secondary);
 }
 
 .date {
