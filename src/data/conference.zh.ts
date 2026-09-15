@@ -266,6 +266,12 @@ export const conferenceZh: ConferenceContent = {
       },
     ],
   },
+  contact: {
+    id: "contact",
+    heading: "联系我们",
+    emailLabel: "会务邮箱",
+    email: "China_DocAI@163.com",
+  },
   footer: {
     brand: "China DocAI 2026",
     subtitle: "2026 CSIG 文档智能大会",

@@ -140,6 +140,13 @@ export interface ConferenceContent {
     subheading?: string;
     items: GuidelineItem[];
   };
+  contact: {
+    id: string;
+    heading: string;
+    subheading?: string;
+    emailLabel: string;
+    email: string;
+  };
   footer: {
     brand: string;
     subtitle: string;

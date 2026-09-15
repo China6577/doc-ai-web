@@ -301,6 +301,12 @@ export const conferenceEn: ConferenceContent = {
       },
     ],
   },
+  contact: {
+    id: "contact",
+    heading: "Contact Us",
+    emailLabel: "Conference Email",
+    email: "China_DocAI@163.com",
+  },
   footer: {
     brand: "China DocAI 2026",
     subtitle: "2026 CSIG Conference on Document Intelligence",

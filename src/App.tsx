@@ -12,6 +12,7 @@ import { Publication } from "./components/Publication/Publication";
 import { ImportantDates } from "./components/ImportantDates/ImportantDates";
 import { Submission } from "./components/Submission/Submission";
 import { Guidelines } from "./components/Guidelines/Guidelines";
+import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         onToggleLanguage={toggleLanguage}
       />
       <main>
-        <ConferenceBanner alt={content.banner.alt} />
+        <ConferenceBanner alt={content.banner.alt} language={language} />
         <Hero hero={content.hero} />
         <ConferenceOverview overview={content.overview} />
         <ConferenceHighlights highlights={content.highlights} />
@@ -37,6 +38,7 @@ function App() {
         <ImportantDates dates={content.dates} />
         <Submission submission={content.submission} />
         <Guidelines guidelines={content.guidelines} />
+        <Contact contact={content.contact} />
       </main>
       <Footer footer={content.footer} />
     </>
