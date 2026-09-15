@@ -277,7 +277,7 @@ export const conferenceEn: ConferenceContent = {
         number: "02",
         title: "Formatting and Page Limit",
         paragraphs: [
-          "Papers should be formatted to follow the instructions in the ICDAR webpage and according to the instructions and style files provided by [this website](http://www.cjig.cn/previewFile?id=96199771&type=pdf&lang=zhOriginality). The LaTeX template for LNCS can be downloaded here and is also available on Overleaf. Papers are limited to 20 pages (not including references).",
+          "Papers should be formatted to follow the instructions in the ICDAR webpage and according to the instructions and style files provided by [this website](http://www.cjig.cn/previewFile?id=96199771&type=pdf&lang=zh). The LaTeX template for LNCS can be downloaded here and is also available on Overleaf. Papers are limited to 20 pages (not including references).",
         ],
       },
       {
