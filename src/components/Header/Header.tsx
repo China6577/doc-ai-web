@@ -10,58 +10,42 @@ export function Header({ header }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
-  const [ignoreObserver, setIgnoreObserver] = useState(false);
-  const ignoreTimeoutRef = useRef<number | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const onScroll = () => {
+    const sections = document.querySelectorAll<HTMLElement>("section[id]");
+
+    const update = () => {
       setScrolled(window.scrollY > 4);
+
+      if (sections.length === 0) return;
+      const headerHeight = headerRef.current?.getBoundingClientRect().height ?? 80;
+      const offset = headerHeight + 12;
+
+      let current = "";
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= offset) {
+          current = section.id;
+        }
+      });
+
+      setActiveSection((prev) => (current && current !== prev ? current : prev));
     };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
   }, []);
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    if (sections.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (ignoreObserver) return;
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: "-80px 0px -80% 0px", threshold: 0 },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => {
-      observer.disconnect();
-      if (ignoreTimeoutRef.current) {
-        window.clearTimeout(ignoreTimeoutRef.current);
-      }
-    };
-  }, [ignoreObserver]);
 
   const closeMenu = () => setMenuOpen(false);
 
   const handleNavClick = (id: string) => {
     setActiveSection(id);
-    setIgnoreObserver(true);
-    if (ignoreTimeoutRef.current) {
-      window.clearTimeout(ignoreTimeoutRef.current);
-    }
-    ignoreTimeoutRef.current = window.setTimeout(() => {
-      setIgnoreObserver(false);
-    }, 700);
   };
 
   return (
     <header
+      ref={headerRef}
       className={`${styles.header} ${scrolled || menuOpen ? styles.scrolled : ""}`}
     >
       <div className={styles.inner}>
