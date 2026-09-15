@@ -292,6 +292,8 @@ export const conferenceEn: ConferenceContent = {
         title: "Registration and Attendance",
         paragraphs: [
           "At least one author of each accepted paper must register for the conference, in order to present the paper.",
+          "Here is a link to create the account: [https://cmt3.research.microsoft.com/docs/help/general/account-creation.html](https://cmt3.research.microsoft.com/docs/help/general/account-creation.html)",
+          "Here is a link for authors on how to submit a paper: [https://cmt3.research.microsoft.com/docs/help/author/author-submission-form.html](https://cmt3.research.microsoft.com/docs/help/author/author-submission-form.html)",
         ],
       },
     ],
@@ -300,7 +302,7 @@ export const conferenceEn: ConferenceContent = {
     id: "contact",
     heading: "Contact Us",
     emailLabel: "Conference Email",
-    email: "China_DocAI@163.com",
+    email: "Qiufeng.wang@xjtlu.edu.cn",
   },
   acknowledgment: {
     id: "acknowledgment",
