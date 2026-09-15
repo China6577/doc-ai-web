@@ -46,10 +46,6 @@
   line-height: 1.08;
 }
 
-.titleLine {
-  display: block;
-}
-
 .subtitle {
   margin-top: 18px;
   font-size: clamp(18px, 2.4vw, 24px);

@@ -16,7 +16,6 @@ export const conferenceEn: ConferenceContent = {
       { id: "topics", label: "Topics" },
       { id: "dates", label: "Important Dates" },
     ],
-    languageSwitchLabel: "Switch language / 切换语言",
     menuLabel: "Open menu",
     closeLabel: "Close menu",
   },
@@ -25,8 +24,7 @@ export const conferenceEn: ConferenceContent = {
   },
   hero: {
     kicker: "CALL FOR PAPERS",
-    titleLine1: "2026 CSIG",
-    titleLine2: "China DocAI 2026",
+    title: "China DocAI 2026",
     datetime: "December 25–27, 2026",
     location: "Beijing, China",
     deadlineLabel: "Paper Submission Deadline",
@@ -249,9 +247,9 @@ export const conferenceEn: ConferenceContent = {
     heading: "Important Dates",
     subheading: "",
     items: [
-      { date: "Oct 31, 2026", label: "Paper Submission Deadline" },
-      { date: "Nov 30, 2026", label: "Conference Paper Notification" },
-      { date: "Dec 15, 2026", label: "Journal Paper Notification" },
+      { date: "Oct 31, 2026", label: "Submission Deadline" },
+      { date: "Nov 30, 2026", label: "Decisions Announced" },
+      { date: "Dec 15, 2026", label: "Camera Ready Deadline" },
     ],
   },
   guidelines: {
@@ -287,6 +285,8 @@ export const conferenceEn: ConferenceContent = {
     emailLabel: "Conference Email",
     email: "China_DocAI@163.com",
   },
+  acknowledgment:
+    "The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.",
   footer: {
     brand: "China DocAI 2026",
   },

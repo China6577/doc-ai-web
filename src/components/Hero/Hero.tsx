@@ -10,11 +10,10 @@ export function Hero({ hero }: HeroProps) {
     <section className={styles.hero} id="top">
       <div className={styles.inner}>
         <p className={styles.kicker}>{hero.kicker}</p>
-        <h1 className={styles.title}>
-          <span className={styles.titleLine}>{hero.titleLine1}</span>
-          <span className={styles.titleLine}>{hero.titleLine2}</span>
-        </h1>
-        <p className={styles.subtitle}>{hero.subtitle}</p>
+        <h1 className={styles.title}>{hero.title}</h1>
+        {hero.subtitle && (
+          <p className={styles.subtitle}>{hero.subtitle}</p>
+        )}
 
         <p className={styles.meta}>
           <span>{hero.datetime}</span>

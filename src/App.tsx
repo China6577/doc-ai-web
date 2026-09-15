@@ -11,21 +11,18 @@ import { Topics } from "./components/Topics/Topics";
 import { Publication } from "./components/Publication/Publication";
 import { ImportantDates } from "./components/ImportantDates/ImportantDates";
 import { Guidelines } from "./components/Guidelines/Guidelines";
+import { Acknowledgment } from "./components/Acknowledgment/Acknowledgment";
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
 
 function App() {
-  const { language, content, toggleLanguage } = useLanguage();
+  const { content } = useLanguage();
 
   return (
     <>
-      <Header
-        header={content.header}
-        language={language}
-        onToggleLanguage={toggleLanguage}
-      />
+      <Header header={content.header} />
       <main>
-        <ConferenceBanner alt={content.banner.alt} language={language} />
+        <ConferenceBanner alt={content.banner.alt} />
         <Hero hero={content.hero} />
         <ConferenceOverview overview={content.overview} />
         <ConferenceHighlights highlights={content.highlights} />
@@ -36,6 +33,7 @@ function App() {
         <Publication publication={content.publication} />
         <ImportantDates dates={content.dates} />
         <Guidelines guidelines={content.guidelines} />
+        <Acknowledgment text={content.acknowledgment} />
         <Contact contact={content.contact} />
       </main>
       <Footer footer={content.footer} />

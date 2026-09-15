@@ -1,5 +1,3 @@
-export type Language = "zh" | "en";
-
 export interface NavItem {
   id: string;
   label: string;
@@ -63,7 +61,6 @@ export interface ConferenceContent {
   header: {
     brand: string;
     nav: NavItem[];
-    languageSwitchLabel: string;
     menuLabel: string;
     closeLabel: string;
   };
@@ -72,8 +69,7 @@ export interface ConferenceContent {
   };
   hero: {
     kicker: string;
-    titleLine1: string;
-    titleLine2: string;
+    title: string;
     subtitle?: string;
     datetime: string;
     location: string;
@@ -140,6 +136,7 @@ export interface ConferenceContent {
     emailLabel: string;
     email: string;
   };
+  acknowledgment: string;
   footer: {
     brand: string;
   };

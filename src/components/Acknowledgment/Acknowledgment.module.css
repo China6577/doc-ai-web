@@ -1,0 +1,17 @@
+.section {
+  padding: 48px var(--gutter);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  text-align: center;
+}
+
+.inner {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}

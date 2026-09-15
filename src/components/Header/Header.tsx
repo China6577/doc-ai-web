@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import type { ConferenceContent, Language } from "../../types/conference";
+import type { ConferenceContent } from "../../types/conference";
 import styles from "./Header.module.css";
 
 interface HeaderProps {
   header: ConferenceContent["header"];
-  language: Language;
-  onToggleLanguage: () => void;
 }
 
-export function Header({ header, language, onToggleLanguage }: HeaderProps) {
+export function Header({ header }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -41,23 +39,6 @@ export function Header({ header, language, onToggleLanguage }: HeaderProps) {
         </nav>
 
         <div className={styles.actions}>
-          <button
-            type="button"
-            className={styles.langToggle}
-            onClick={onToggleLanguage}
-            aria-label={header.languageSwitchLabel}
-          >
-            <span className={language === "zh" ? styles.langActive : ""}>
-              中文
-            </span>
-            <span className={styles.langDivider} aria-hidden="true">
-              |
-            </span>
-            <span className={language === "en" ? styles.langActive : ""}>
-              EN
-            </span>
-          </button>
-
           <button
             type="button"
             className={styles.menuButton}
