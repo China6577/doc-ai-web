@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ConferenceContent } from "../../types/conference";
 import styles from "./Header.module.css";
 
@@ -10,6 +10,8 @@ export function Header({ header }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+  const [ignoreObserver, setIgnoreObserver] = useState(false);
+  const ignoreTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -26,20 +28,37 @@ export function Header({ header }: HeaderProps) {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (ignoreObserver) return;
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
         });
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
+      { rootMargin: "-80px 0px -80% 0px", threshold: 0 },
     );
 
     sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      observer.disconnect();
+      if (ignoreTimeoutRef.current) {
+        window.clearTimeout(ignoreTimeoutRef.current);
+      }
+    };
+  }, [ignoreObserver]);
 
   const closeMenu = () => setMenuOpen(false);
+
+  const handleNavClick = (id: string) => {
+    setActiveSection(id);
+    setIgnoreObserver(true);
+    if (ignoreTimeoutRef.current) {
+      window.clearTimeout(ignoreTimeoutRef.current);
+    }
+    ignoreTimeoutRef.current = window.setTimeout(() => {
+      setIgnoreObserver(false);
+    }, 700);
+  };
 
   return (
     <header
@@ -56,6 +75,7 @@ export function Header({ header }: HeaderProps) {
               key={item.id}
               href={`#${item.id}`}
               className={`${styles.navLink} ${activeSection === item.id ? styles.active : ""}`}
+              onClick={() => handleNavClick(item.id)}
             >
               {item.label}
             </a>
@@ -90,7 +110,10 @@ export function Header({ header }: HeaderProps) {
             key={item.id}
             href={`#${item.id}`}
             className={`${styles.mobileNavLink} ${activeSection === item.id ? styles.mobileActive : ""}`}
-            onClick={closeMenu}
+            onClick={() => {
+              handleNavClick(item.id);
+              closeMenu();
+            }}
           >
             {item.label}
           </a>
