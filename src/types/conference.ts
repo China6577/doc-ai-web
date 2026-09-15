@@ -142,7 +142,7 @@ export interface ConferenceContent {
     id: string;
     heading: string;
     subheading?: string;
-    emailLabel: string;
+    emailLabel?: string;
     email: string;
   };
   acknowledgment: {

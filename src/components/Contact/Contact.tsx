@@ -18,7 +18,9 @@ export function Contact({ contact }: ContactProps) {
           subheading={contact.subheading}
         />
         <div className={styles.card}>
-          <span className={styles.emailLabel}>{contact.emailLabel}</span>
+          {contact.emailLabel ? (
+            <span className={styles.emailLabel}>{contact.emailLabel}</span>
+          ) : null}
           <a className={styles.email} href={`mailto:${contact.email}`}>
             {contact.email}
           </a>
