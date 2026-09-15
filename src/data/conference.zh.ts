@@ -15,7 +15,6 @@ export const conferenceZh: ConferenceContent = {
       { id: "program", label: "会议日程" },
       { id: "topics", label: "征稿范围" },
       { id: "dates", label: "重要日期" },
-      { id: "submission", label: "投稿说明" },
     ],
     languageSwitchLabel: "切换语言 / Switch language",
     menuLabel: "打开菜单",
@@ -28,7 +27,6 @@ export const conferenceZh: ConferenceContent = {
     kicker: "征稿通知",
     titleLine1: "2026 CSIG",
     titleLine2: "文档智能大会",
-    subtitle: "China DocAI 2026",
     datetime: "2026 年 12 月 25–27 日",
     location: "北京",
     deadlineLabel: "正文截稿",
@@ -222,43 +220,26 @@ export const conferenceZh: ConferenceContent = {
       { date: "2026.12.15", label: "学报论文录用通知" },
     ],
   },
-  submission: {
-    id: "submission",
-    heading: "投稿系统",
-    statusBadge: "即将公布",
-    description: "投稿系统即将公布",
-  },
   guidelines: {
     heading: "投稿注意事项",
     subheading: "Submission Guidelines",
     items: [
       {
         number: "01",
-        title: "原创论文稿件格式",
-        paragraphs: [
-          "参照《中国图象图形学报》体例和模板进行撰写：官网—下载中心—学报体例和排版模板。只接收中文投稿。",
-        ],
-        link: {
-          label: "学报体例和排版模板",
-          url: "http://www.cjig.cn/previewFile?id=96199771&type=pdf&lang=zh",
-        },
-      },
-      {
-        number: "02",
         title: "原创性与版权",
         paragraphs: [
           "原创论文未在正式出版物上发表过，不存在一稿多投现象，保证投稿文章的合法性（无抄袭、剽窃、侵权等不良行为），投稿后需签署论文版权转让和保密审查证明。",
         ],
       },
       {
-        number: "03",
+        number: "02",
         title: "双盲评审",
         paragraphs: [
           "每篇稿件将由多名领域专家匿名评审，大会审稿采用双盲评审机制，论文中不能出现任何作者及单位信息，否则将作退稿处理。",
         ],
       },
       {
-        number: "04",
+        number: "03",
         title: "注册参会",
         paragraphs: [
           "所有录用论文必须有一位作者注册并且参会，否则论文将不会被发表和宣传。",
@@ -274,6 +255,5 @@ export const conferenceZh: ConferenceContent = {
   },
   footer: {
     brand: "China DocAI 2026",
-    subtitle: "2026 CSIG 文档智能大会",
   },
 };

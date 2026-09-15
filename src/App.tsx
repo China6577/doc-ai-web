@@ -10,7 +10,6 @@ import { Papers } from "./components/Papers/Papers";
 import { Topics } from "./components/Topics/Topics";
 import { Publication } from "./components/Publication/Publication";
 import { ImportantDates } from "./components/ImportantDates/ImportantDates";
-import { Submission } from "./components/Submission/Submission";
 import { Guidelines } from "./components/Guidelines/Guidelines";
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
@@ -36,7 +35,6 @@ function App() {
         <Topics topics={content.topics} />
         <Publication publication={content.publication} />
         <ImportantDates dates={content.dates} />
-        <Submission submission={content.submission} />
         <Guidelines guidelines={content.guidelines} />
         <Contact contact={content.contact} />
       </main>

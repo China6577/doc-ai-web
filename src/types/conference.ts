@@ -74,7 +74,7 @@ export interface ConferenceContent {
     kicker: string;
     titleLine1: string;
     titleLine2: string;
-    subtitle: string;
+    subtitle?: string;
     datetime: string;
     location: string;
     deadlineLabel: string;
@@ -128,13 +128,6 @@ export interface ConferenceContent {
     subheading?: string;
     items: ImportantDate[];
   };
-  submission: {
-    id: string;
-    heading: string;
-    subheading?: string;
-    statusBadge: string;
-    description: string;
-  };
   guidelines: {
     heading: string;
     subheading?: string;
@@ -149,6 +142,5 @@ export interface ConferenceContent {
   };
   footer: {
     brand: string;
-    subtitle: string;
   };
 }

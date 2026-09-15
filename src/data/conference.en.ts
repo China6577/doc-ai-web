@@ -2,9 +2,9 @@ import type { ConferenceContent } from "../types/conference";
 
 export const conferenceEn: ConferenceContent = {
   meta: {
-    title: "2026 CSIG Conference on Document Intelligence | China DocAI 2026",
+    title: "China DocAI 2026",
     description:
-      "The 2026 CSIG Conference on Document Intelligence (China DocAI 2026) will be held in Beijing, China, from December 25 to 27, 2026. The conference focuses on fundamental theories, core algorithms, and engineering applications of document intelligence, covering six tracks: document perception and structure parsing, semantic understanding and multimodal large models, generation, retrieval and agents, datasets and evaluation, security, forensics and trustworthy intelligence, and systems and industrial applications.",
+      "China DocAI 2026 will be held in Beijing, China, from December 25 to 27, 2026. The conference focuses on fundamental theories, core algorithms, and engineering applications of document intelligence, covering six tracks: document perception and structure parsing, semantic understanding and multimodal large models, generation, retrieval and agents, datasets and evaluation, security, forensics and trustworthy intelligence, and systems and industrial applications.",
     htmlLang: "en",
   },
   header: {
@@ -15,20 +15,18 @@ export const conferenceEn: ConferenceContent = {
       { id: "program", label: "Program" },
       { id: "topics", label: "Topics" },
       { id: "dates", label: "Important Dates" },
-      { id: "submission", label: "Submission" },
     ],
     languageSwitchLabel: "Switch language / 切换语言",
     menuLabel: "Open menu",
     closeLabel: "Close menu",
   },
   banner: {
-    alt: "CSIG Conference on Document Intelligence",
+    alt: "China DocAI 2026",
   },
   hero: {
     kicker: "CALL FOR PAPERS",
     titleLine1: "2026 CSIG",
-    titleLine2: "Conference on Document Intelligence",
-    subtitle: "China DocAI 2026",
+    titleLine2: "China DocAI 2026",
     datetime: "December 25–27, 2026",
     location: "Beijing, China",
     deadlineLabel: "Paper Submission Deadline",
@@ -43,7 +41,7 @@ export const conferenceEn: ConferenceContent = {
       "As digital government services, smart offices, digital archives, and artificial intelligence become increasingly integrated, document intelligence is being applied ever more widely in scenarios such as layout parsing, content recognition, information extraction, intelligent question answering, and multimodal understanding. High-precision, highly robust document parsing capability is the core foundation for digitizing, structuring, and intelligently utilizing massive volumes of paper and electronic documents.",
       "However, real-world document data commonly suffers from complex layouts, blurred handwriting, occlusion and distortion, multi-source heterogeneity, mixed languages, and interleaved handwritten and printed text. These issues lead to sparse effective features and abundant interference, making it difficult for traditional text processing methods and general-purpose vision models to handle complex document tasks. In particularly challenging scenarios—such as ancient books and historical documents, handwritten receipts, formulas and tables, and blurred scans—existing algorithms are prone to parsing deviations, missed information detection, structural misjudgment, and failures in semantic understanding. This severely limits the industrial adoption of document intelligence technologies and raises the bar for building high-precision, strongly generalizable, and highly reliable document vision and multimodal learning systems.",
       "In recent years, multimodal large models, few-shot learning, robust feature learning, and intelligent evaluation techniques have advanced rapidly, offering a brand-new technical paradigm for complex document parsing. Against this backdrop, research into the fundamental theories, core algorithms, and engineering applications of document intelligence for real-world complex scenarios carries significant academic value and broad prospects for practical deployment.",
-      "To support the development of the digital content industry and smart government services, to systematically review frontier research progress in document intelligence in China, and to promote algorithmic innovation, technological iteration, and deep integration of industry, academia, and research, the 2026 CSIG Conference on Document Intelligence (China DocAI 2026) is hereby convened. The conference will take place in Beijing from December 25 to 27, 2026. Submissions are warmly invited, and outstanding papers will be selected for publication in the \u201cIntelligent Document\u201d special issue of the Journal of Image and Graphics.",
+      "To support the development of the digital content industry and smart government services, to systematically review frontier research progress in document intelligence in China, and to promote algorithmic innovation, technological iteration, and deep integration of industry, academia, and research, China DocAI 2026 is hereby convened. The conference will take place in Beijing from December 25 to 27, 2026. Submissions are warmly invited, and outstanding papers will be selected for publication in the \u201cIntelligent Document\u201d special issue of the Journal of Image and Graphics.",
     ],
   },
   highlights: {
@@ -256,44 +254,26 @@ export const conferenceEn: ConferenceContent = {
       { date: "Dec 15, 2026", label: "Journal Paper Notification" },
     ],
   },
-  submission: {
-    id: "submission",
-    heading: "Submission",
-    subheading: "",
-    statusBadge: "Coming Soon",
-    description: "Submission System Coming Soon",
-  },
   guidelines: {
     heading: "Submission Guidelines",
     subheading: "",
     items: [
       {
         number: "01",
-        title: "Manuscript Format for Original Papers",
-        paragraphs: [
-          "Manuscripts should be prepared according to the format and template of the Journal of Image and Graphics: official website — Download Center — journal format and typesetting template. Only submissions in Chinese are accepted.",
-        ],
-        link: {
-          label: "Journal Format and Typesetting Template",
-          url: "http://www.cjig.cn/previewFile?id=96199771&type=pdf&lang=zh",
-        },
-      },
-      {
-        number: "02",
         title: "Originality and Copyright",
         paragraphs: [
           "Original papers must not have been published in any formal publication and must not be under simultaneous submission elsewhere. Authors must guarantee the legitimacy of the submitted manuscript (free of plagiarism, infringement, or other misconduct). After submission, authors are required to sign a copyright transfer agreement and a confidentiality review certificate.",
         ],
       },
       {
-        number: "03",
+        number: "02",
         title: "Double-blind Review",
         paragraphs: [
           "Each manuscript will be anonymously reviewed by multiple domain experts. The conference adopts a double-blind review mechanism; manuscripts must not contain any author or affiliation information, otherwise they will be rejected.",
         ],
       },
       {
-        number: "04",
+        number: "03",
         title: "Registration and Attendance",
         paragraphs: [
           "Each accepted paper must have at least one author registered and attending the conference; otherwise, the paper will not be published or promoted.",
@@ -309,6 +289,5 @@ export const conferenceEn: ConferenceContent = {
   },
   footer: {
     brand: "China DocAI 2026",
-    subtitle: "2026 CSIG Conference on Document Intelligence",
   },
 };

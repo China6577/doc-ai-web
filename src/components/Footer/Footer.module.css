@@ -16,9 +16,3 @@
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
 }
-
-.subtitle {
-  margin-top: 8px;
-  font-size: 14px;
-  color: var(--color-text-secondary);
-}
