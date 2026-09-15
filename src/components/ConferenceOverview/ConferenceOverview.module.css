@@ -1,5 +1,5 @@
 .section {
-  padding: 96px var(--gutter);
+  padding: 64px var(--gutter) 96px;
 }
 
 .inner {
@@ -38,7 +38,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 64px var(--gutter);
+    padding: 48px var(--gutter) 64px;
   }
 
   .body {

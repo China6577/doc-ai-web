@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  padding: 96px var(--gutter) 88px;
+  padding: 96px var(--gutter) 48px;
   text-align: center;
   background: radial-gradient(
     circle at 50% 0%,
@@ -106,7 +106,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 64px var(--gutter) 56px;
+    padding: 64px var(--gutter) 32px;
   }
 
   .meta {
