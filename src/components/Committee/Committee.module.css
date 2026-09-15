@@ -9,31 +9,40 @@
 }
 
 .groups {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.group {
+  text-align: center;
 }
 
 .groupTitle {
+  display: inline-block;
   font-size: 15px;
   font-weight: 600;
   color: var(--color-text-secondary);
   letter-spacing: 0.04em;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--color-border-strong);
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .members {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 72px;
 }
 
 .member {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 4px;
+  min-width: 160px;
 }
 
 .name {
@@ -49,26 +58,20 @@
   color: var(--color-text-secondary);
 }
 
-@media (min-width: 901px) {
-  .groupTitle {
-    text-align: center;
-  }
-
-  .members {
-    align-items: center;
-    text-align: center;
-  }
-}
-
-@media (max-width: 900px) {
-  .groups {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-}
-
 @media (max-width: 768px) {
   .section {
     padding: 64px var(--gutter);
+  }
+
+  .groups {
+    gap: 48px;
+  }
+
+  .members {
+    gap: 28px 40px;
+  }
+
+  .member {
+    min-width: 140px;
   }
 }

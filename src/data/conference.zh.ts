@@ -57,7 +57,6 @@ export const conferenceZh: ConferenceContent = {
   committee: {
     id: "committee",
     heading: "组织架构",
-    subheading: "Committee",
     groups: [
       {
         title: "大会主席",
@@ -103,7 +102,6 @@ export const conferenceZh: ConferenceContent = {
   },
   papers: {
     heading: "会议论文",
-    subheading: "Papers",
     categories: [
       { number: "01", title: "顶会顶刊分享论文" },
       { number: "02", title: "未经发表过的原创论文" },
@@ -227,7 +225,6 @@ export const conferenceZh: ConferenceContent = {
   submission: {
     id: "submission",
     heading: "投稿系统",
-    subheading: "Submission",
     statusBadge: "即将公布",
     description: "投稿系统即将公布",
   },
@@ -259,7 +256,6 @@ export const conferenceZh: ConferenceContent = {
         paragraphs: [
           "每篇稿件将由多名领域专家匿名评审，大会审稿采用双盲评审机制，论文中不能出现任何作者及单位信息，否则将作退稿处理。",
         ],
-        highlight: "双盲评审",
       },
       {
         number: "04",

@@ -291,7 +291,6 @@ export const conferenceEn: ConferenceContent = {
         paragraphs: [
           "Each manuscript will be anonymously reviewed by multiple domain experts. The conference adopts a double-blind review mechanism; manuscripts must not contain any author or affiliation information, otherwise they will be rejected.",
         ],
-        highlight: "Double-blind Review",
       },
       {
         number: "04",
