@@ -1,5 +1,5 @@
 .section {
-  padding: 0 var(--gutter) 96px;
+  padding: 48px var(--gutter);
   background: var(--color-bg-secondary);
 }
 
@@ -43,7 +43,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 0 var(--gutter) 64px;
+    padding: 32px var(--gutter);
   }
 
   .grid {
