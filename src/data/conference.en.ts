@@ -148,7 +148,7 @@ export const conferenceEn: ConferenceContent = {
   },
   topics: {
     id: "topics",
-    heading: "Topics of Interest",
+    heading: "Topics",
     subheading: "",
     sections: [
       {
