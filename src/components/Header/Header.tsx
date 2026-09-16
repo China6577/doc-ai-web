@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 const SCROLL_OFFSET = 80; // matches globals.css scroll-padding-top
-const CLICK_IGNORE_MS = 800;
+const CLICK_IGNORE_MS = 1200;
 
 export function Header({ header }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
@@ -31,14 +31,13 @@ export function Header({ header }: HeaderProps) {
         }
       });
 
-      // If we are at the bottom and the last section cannot reach the offset line,
-      // treat the last section as active.
-      if (!current && sections.length > 0) {
-        const scrollBottom = window.innerHeight + window.scrollY;
-        const pageHeight = document.documentElement.scrollHeight;
-        if (scrollBottom >= pageHeight - 100) {
-          current = sections[sections.length - 1].id;
-        }
+      // When we are near the bottom of the page, the last short section may not
+      // be able to reach the offset line. In that case highlight the last section.
+      const isNearBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 100;
+      if (isNearBottom && sections.length > 0) {
+        current = sections[sections.length - 1].id;
       }
 
       setActiveSection((prev) => (current && current !== prev ? current : prev));
