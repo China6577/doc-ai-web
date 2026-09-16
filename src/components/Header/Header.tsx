@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { ConferenceContent } from "../../types/conference";
 import styles from "./Header.module.css";
 
@@ -10,17 +10,16 @@ export function Header({ header }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
-  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
+    // Matches globals.css scroll-padding-top; anchor scrolling lands here.
+    const offset = 80;
 
     const update = () => {
       setScrolled(window.scrollY > 4);
 
       if (sections.length === 0) return;
-      const headerHeight = headerRef.current?.getBoundingClientRect().height ?? 80;
-      const offset = headerHeight + 12;
 
       let current = "";
       sections.forEach((section) => {
@@ -45,7 +44,6 @@ export function Header({ header }: HeaderProps) {
 
   return (
     <header
-      ref={headerRef}
       className={`${styles.header} ${scrolled || menuOpen ? styles.scrolled : ""}`}
     >
       <div className={styles.inner}>
