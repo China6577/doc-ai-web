@@ -149,15 +149,22 @@ items: [
 
 ## 6. 构建与部署
 
-### 推荐构建命令
+### 本地构建
 
-当前环境直接执行 `npm run build` 会触发安全策略对 `wsl.exe` 的拦截，请使用：
+当前沙箱直接执行 `npm run build` 会触发对 `wsl.exe` 的拦截，请使用：
 
 ```bash
 node node_modules/typescript/bin/tsc -b && node node_modules/vite/bin/vite.js build
 ```
 
-产物在 `dist/`。`dist/` 已加入 `.gitignore`，不提交到仓库。
+产物在 `dist/`。
+
+### GitHub Pages 自动部署
+
+- 已配置 `.github/workflows/deploy.yml`。
+- 每次 `push` 到 `main` 会自动 `npm ci && npm run build`，并把 `dist/` 部署到 GitHub Pages。
+- 使用 workflow 部署时，仓库里**不需要**提交 `dist/`。
+- 首次使用需在仓库 Settings → Pages → Source 中选择 **GitHub Actions**。
 
 ### 本地预览
 
@@ -176,6 +183,7 @@ node node_modules/vite/bin/vite.js
 - `origin`: `git@github.com:China6577/doc-ai-web.git`
 - 主分支：`main`
 - 完成修改后记得 `git push origin main`。
+- `.workbuddy/` 已加入 `.gitignore`，不会上传到远程。
 
 ---
 
@@ -204,11 +212,12 @@ node node_modules/vite/bin/vite.js
 
 ## 9. 常见坑
 
-1. **不要直接运行 `npm run build`**：在当前沙箱会被拦截。改用上面给出的 `node .../tsc` + `node .../vite.js build`。
+1. **不要直接运行 `npm run build`**：在当前沙箱会被拦截。本地构建改用 `node .../tsc` + `node .../vite.js build`；GitHub Actions 里用 `npm run build` 正常。
 2. **静态图片**：直接替换 `public/` 下的文件；`assets/` 仅作源码备份，不会被自动复制到 `dist/`。
 3. **CRLF 警告**：Git 会提示 LF 转 CRLF，这是 Windows 环境的正常现象，不影响提交。
 4. **新增依赖**：项目极简，尽量避免新增依赖；确需安装时使用 isolated venv / node workspace，不要污染全局环境。
 5. **不要写死中文**：本项目目前为英文站，文案统一走 `conference.en.ts`。
+6. **`.workbuddy/` 不上传**：该目录已加入 `.gitignore`，仅本地保留，不要强制 `git add -f .workbuddy/`。
 
 ---
 
@@ -216,4 +225,4 @@ node node_modules/vite/bin/vite.js
 
 - 项目：China DocAI 2026 官网
 - 用户偏好：清晰、正确、可教学的代码；不过度工程化。
-- 最新工作日志：`C:\Users\36413\Desktop\vibe-codeing-project\workbuddy\web\doc-ai-web\.workbuddy\memory\2026-09-15.md`
+- 最新工作日志：`.workbuddy/memory/YYYY-MM-DD.md`（本地文件，不上传远程）
