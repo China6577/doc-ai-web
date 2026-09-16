@@ -268,32 +268,23 @@ export const conferenceEn: ConferenceContent = {
     items: [
       {
         number: "01",
-        title: "Originality",
+        title: "Originality and Formatting",
         paragraphs: [
-          "The conference is open to original papers of theoretical or practical nature.",
+          "The conference is open to original papers of theoretical or practical nature. Papers should be formatted to follow the instructions in [ICDAR webpage](https://icdar2027.org/paper-submission-instruction). Papers should be formatted according to the instructions and style files provided by [Springer](https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines). The LaTeX template for LNCS can be downloaded [here](https://resource-cms.springernature.com/springer-cms/rest/v1/content/19238648/data/v8). It is also available on [Overleaf](https://www.overleaf.com/latex/templates/springer-lecture-notes-in-computer-science/kzwwpvhwnvfj#.WuA4JS5uZpi). Papers are limited to 15 pages (not including references).",
         ],
       },
       {
         number: "02",
-        title: "Formatting and Page Limit",
+        title: "Double-Blind Review and Submission",
         paragraphs: [
-          "Papers should be formatted to follow the instructions in the ICDAR webpage and according to the instructions and style files provided by [this website](http://www.cjig.cn/previewFile?id=96199771&type=pdf&lang=zh). The LaTeX template for LNCS can be downloaded here and is also available on Overleaf. Papers are limited to 20 pages (not including references).",
+          "This conference will follow a double-blind review process. Authors should not include their names and affiliations anywhere in the manuscript. Authors should also ensure that their identity is not revealed directly by citing their previous work in the third person and omitting acknowledgments until the camera-ready version. Papers have to be submitted via the [workshop's CMT submission page](https://cmt3.research.microsoft.com/M3RD2025/Submission/Index). [Here is a link](https://cmt3.research.microsoft.com/docs/help/general/account-creation.html) to create the account. [Here is a link](https://cmt3.research.microsoft.com/docs/help/author/author-submission-form.html) for authors on how to submit a paper.",
         ],
       },
       {
         number: "03",
-        title: "Double-Blind Review and Submission",
-        paragraphs: [
-          "This conference will follow a double-blind review process. Authors should not include their names and affiliations anywhere in the manuscript. Authors should also ensure that their identity is not revealed directly by citing their previous work in the third person and omitting acknowledgments until the camera-ready version. Papers have to be submitted via the conference's CMT submission page.",
-        ],
-      },
-      {
-        number: "04",
         title: "Registration and Attendance",
         paragraphs: [
           "At least one author of each accepted paper must register for the conference, in order to present the paper.",
-          "Here is a [link](https://cmt3.research.microsoft.com/docs/help/general/account-creation.html) to create the account.",
-          "Here is a [link](https://cmt3.research.microsoft.com/docs/help/author/author-submission-form.html) for authors on how to submit a paper.",
         ],
       },
     ],
