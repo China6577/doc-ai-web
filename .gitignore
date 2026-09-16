@@ -2,6 +2,9 @@
 node_modules/
 dist/
 
+# WorkBuddy 本地记忆/日志（不上传远程）
+.workbuddy/
+
 # IDE
 .idea/
 
