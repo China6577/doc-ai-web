@@ -36,11 +36,6 @@ export interface ImportantDate {
   label: string;
 }
 
-export interface PaperCategory {
-  number: string;
-  title: string;
-}
-
 export interface HighlightItem {
   label: string;
   value: string;
@@ -104,13 +99,6 @@ export interface ConferenceContent {
     heading: string;
     subheading?: string;
     days: ProgramDay[];
-  };
-  papers: {
-    id: string;
-    heading: string;
-    subheading?: string;
-    categories: PaperCategory[];
-    note: string;
   };
   topics: {
     id: string;

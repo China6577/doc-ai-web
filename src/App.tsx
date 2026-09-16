@@ -6,7 +6,6 @@ import { ConferenceOverview } from "./components/ConferenceOverview/ConferenceOv
 import { ConferenceHighlights } from "./components/ConferenceHighlights/ConferenceHighlights";
 import { Committee } from "./components/Committee/Committee";
 import { Program } from "./components/Program/Program";
-import { Papers } from "./components/Papers/Papers";
 import { Topics } from "./components/Topics/Topics";
 import { Publication } from "./components/Publication/Publication";
 import { ImportantDates } from "./components/ImportantDates/ImportantDates";
@@ -28,7 +27,6 @@ function App() {
         <ConferenceHighlights highlights={content.highlights} />
         <Committee committee={content.committee} />
         <Program program={content.program} />
-        <Papers papers={content.papers} />
         <Topics topics={content.topics} />
         <Publication publication={content.publication} />
         <ImportantDates dates={content.dates} />

@@ -14,7 +14,6 @@ export const conferenceEn: ConferenceContent = {
       { id: "highlights", label: "Highlights" },
       { id: "committee", label: "Committee" },
       { id: "program", label: "Program" },
-      { id: "papers", label: "Papers" },
       { id: "topics", label: "Topics" },
       { id: "publication", label: "Publication" },
       { id: "dates", label: "Important Dates" },
@@ -135,16 +134,6 @@ export const conferenceEn: ConferenceContent = {
         items: ["Keynote Talks", "Poster Session"],
       },
     ],
-  },
-  papers: {
-    id: "papers",
-    heading: "Papers",
-    subheading: "",
-    categories: [
-      { number: "01", title: "Papers Shared from Top Conferences and Journals" },
-      { number: "02", title: "Original Unpublished Papers" },
-    ],
-    note: "Original papers will be accepted through peer review, and outstanding papers will be selected for publication in the \u201cIntelligent Document\u201d special issue of the Journal of Image and Graphics.",
   },
   topics: {
     id: "topics",
