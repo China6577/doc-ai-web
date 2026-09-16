@@ -154,10 +154,16 @@ items: [
 当前沙箱直接执行 `npm run build` 会触发对 `wsl.exe` 的拦截，请使用：
 
 ```bash
-node node_modules/typescript/bin/tsc -b && node node_modules/vite/bin/vite.js build
+node node_modules/typescript/bin/tsc -b && node node_modules/vite/bin/vite.js build && node node_modules/vite/bin/vite.js build --ssr src/entry-server.tsx && node prerender.cjs
 ```
 
-产物在 `dist/`。
+或直接使用：
+
+```bash
+node node_modules/typescript/bin/tsc -b && npm run build:static
+```
+
+产物在 `dist/`，其中 `index.html` 已预渲染为包含所有文本的静态 HTML。
 
 ### GitHub Pages 自动部署
 
@@ -218,7 +224,7 @@ node node_modules/vite/bin/vite.js
 
 ## 9. 常见坑
 
-1. **不要直接运行 `npm run build`**：在当前沙箱会被拦截。本地构建改用 `node .../tsc` + `node .../vite.js build`；GitHub Actions 里用 `npm run build` 正常。
+1. **不要直接运行 `npm run build`**：在当前沙箱会被拦截。本地构建改用 `node .../tsc` + `node .../vite.js build` + SSR + prerender；GitHub Actions 里用 `npm run build:static` 正常。产物 `dist/index.html` 已包含全部静态文本。
 2. **静态图片**：直接替换 `public/` 下的文件；`assets/` 仅作源码备份，不会被自动复制到 `dist/`。
 3. **CRLF 警告**：Git 会提示 LF 转 CRLF，这是 Windows 环境的正常现象，不影响提交。
 4. **新增依赖**：项目极简，尽量避免新增依赖；确需安装时使用 isolated venv / node workspace，不要污染全局环境。
