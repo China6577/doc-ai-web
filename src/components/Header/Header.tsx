@@ -24,21 +24,19 @@ export function Header({ header }: HeaderProps) {
       if (sections.length === 0) return;
       if (Date.now() < ignoreScrollUntilRef.current) return;
 
+      // Highlight the section whose top is closest to the offset line. This handles
+      // both regular scrolling and short bottom sections that cannot reach the offset.
       let current = "";
+      let bestDistance = Infinity;
       sections.forEach((section) => {
-        if (section.getBoundingClientRect().top <= SCROLL_OFFSET) {
+        const distance = Math.abs(
+          section.getBoundingClientRect().top - SCROLL_OFFSET,
+        );
+        if (distance < bestDistance) {
+          bestDistance = distance;
           current = section.id;
         }
       });
-
-      // When we are near the bottom of the page, the last short section may not
-      // be able to reach the offset line. In that case highlight the last section.
-      const isNearBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 100;
-      if (isNearBottom && sections.length > 0) {
-        current = sections[sections.length - 1].id;
-      }
 
       setActiveSection((prev) => (current && current !== prev ? current : prev));
     };
