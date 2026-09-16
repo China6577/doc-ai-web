@@ -266,7 +266,7 @@ export const conferenceEn: ConferenceContent = {
         number: "02",
         title: "Submission via CMT",
         paragraphs: [
-          "Papers have to be submitted via the conference's [CMT submission page](https://cmt3.research.microsoft.com/M3RD2025/Submission/Index). Here is a [link](https://cmt3.research.microsoft.com/docs/help/general/account-creation.html) to create the account. Here is a [link](https://cmt3.research.microsoft.com/docs/help/author/author-submission-form.html) for authors on how to submit a paper.",
+          "Papers have to be submitted via [the conference's CMT submission page](https://cmt3.research.microsoft.com/M3RD2025/Submission/Index). Here is a [link](https://cmt3.research.microsoft.com/docs/help/general/account-creation.html) to create the account. Here is a [link](https://cmt3.research.microsoft.com/docs/help/author/author-submission-form.html) for authors on how to submit a paper.",
         ],
       },
       {
