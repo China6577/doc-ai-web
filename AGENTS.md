@@ -164,7 +164,13 @@ node node_modules/typescript/bin/tsc -b && node node_modules/vite/bin/vite.js bu
 - 已配置 `.github/workflows/deploy.yml`。
 - 每次 `push` 到 `main` 会自动 `npm ci && npm run build`，并把 `dist/` 部署到 GitHub Pages。
 - 使用 workflow 部署时，仓库里**不需要**提交 `dist/`。
-- 首次使用需在仓库 Settings → Pages → Source 中选择 **GitHub Actions**。
+
+首次开启步骤：
+1. 进入仓库 **Settings → Pages → Build and deployment → Source**。
+2. 把 **Deploy from a branch** 改成 **GitHub Actions**。
+3. 点击 **Save**。
+4. 回到仓库首页，进入 **Actions** 标签页，确认 workflow 已运行（首次可能需要点 “Approve”）。
+5. 部署完成后，Pages 地址会显示在 **Settings → Pages** 顶部。
 
 ### 本地预览
 
