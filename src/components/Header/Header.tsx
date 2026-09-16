@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ConferenceContent } from "../../types/conference";
 import styles from "./Header.module.css";
 
@@ -6,27 +6,40 @@ interface HeaderProps {
   header: ConferenceContent["header"];
 }
 
+const SCROLL_OFFSET = 80; // matches globals.css scroll-padding-top
+const CLICK_IGNORE_MS = 800;
+
 export function Header({ header }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+  const ignoreScrollUntilRef = useRef<number>(0);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
-    // Matches globals.css scroll-padding-top; anchor scrolling lands here.
-    const offset = 80;
 
     const update = () => {
       setScrolled(window.scrollY > 4);
 
       if (sections.length === 0) return;
+      if (Date.now() < ignoreScrollUntilRef.current) return;
 
       let current = "";
       sections.forEach((section) => {
-        if (section.getBoundingClientRect().top <= offset) {
+        if (section.getBoundingClientRect().top <= SCROLL_OFFSET) {
           current = section.id;
         }
       });
+
+      // If we are at the bottom and the last section cannot reach the offset line,
+      // treat the last section as active.
+      if (!current && sections.length > 0) {
+        const scrollBottom = window.innerHeight + window.scrollY;
+        const pageHeight = document.documentElement.scrollHeight;
+        if (scrollBottom >= pageHeight - 100) {
+          current = sections[sections.length - 1].id;
+        }
+      }
 
       setActiveSection((prev) => (current && current !== prev ? current : prev));
     };
@@ -40,6 +53,7 @@ export function Header({ header }: HeaderProps) {
 
   const handleNavClick = (id: string) => {
     setActiveSection(id);
+    ignoreScrollUntilRef.current = Date.now() + CLICK_IGNORE_MS;
   };
 
   return (
